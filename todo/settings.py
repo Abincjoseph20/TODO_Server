@@ -137,8 +137,11 @@ DEBUG = False
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://todo-client.vercel.app"
+    "https://todo-client.vercel.app",
+    "https://todo-client-gog9.vercel.app",
+    "https://todo-client-itcc.vercel.app",  # ← if you're using this too
 ]
+
 
 CORS_ALLOW_HEADERS = ['*']
 CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
