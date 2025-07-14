@@ -44,8 +44,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.security.SecurityMiddleware', 
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -131,7 +131,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-ALLOWED_HOSTS = ['*']  # or later, use Render's custom domain
+ALLOWED_HOSTS = [
+    '.onrender.com',       # Your Render domain
+    '.vercel.app',         # Your Vercel frontend
+    'localhost',
+    '127.0.0.1',
+    ]  # or later, use Render's custom domain
 DEBUG = False
 
 
@@ -142,6 +147,3 @@ CORS_ALLOWED_ORIGINS = [
     "https://todo-client-itcc.vercel.app",  # ← if you're using this too
 ]
 
-
-CORS_ALLOW_HEADERS = ['*']
-CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
