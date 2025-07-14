@@ -4,8 +4,7 @@ from . views import TodoViewset
 
 router = DefaultRouter()
 router.register(r'todos',TodoViewset)
-
+#path specified.
 urlpatterns = [
     path('',include(router.urls))
-    
 ]
